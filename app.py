@@ -9,15 +9,15 @@ from pinecone import Pinecone
 from langchain import hub
 from langchain_core.documents import Document
 
-api_key = os.getenv("OPENAI_API_KEY")
+api_key = st.secrets["OPENAI_API_KEY"]
 if not api_key:
     raise ValueError("Missing OpenAI API Key! Add it to the .env file.")
 llm = ChatOpenAI(model_name="gpt-3.5-turbo", openai_api_key=api_key)
 
 embeddings = OpenAIEmbeddings(model="text-embedding-3-small", openai_api_key=api_key)
 
-pinecone_api_key = os.getenv("PINECONE_API_KEY")
-index_name = os.getenv("PINECONE_INDEX")
+pinecone_api_key = st.secrets["PINECONE_API_KEY"]
+index_name = st.secrets["PINECONE_INDEX"]
 if not pinecone_api_key or not index_name:
     raise ValueError("Missing PINECONE_API_KEY or PINECONE_INDEX in .env file!")
 
