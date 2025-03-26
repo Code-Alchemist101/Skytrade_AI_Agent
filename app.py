@@ -9,8 +9,6 @@ from pinecone import Pinecone
 from langchain import hub
 from langchain_core.documents import Document
 
-load_dotenv()
-
 api_key = os.getenv("OPENAI_API_KEY")
 if not api_key:
     raise ValueError("Missing OpenAI API Key! Add it to the .env file.")
