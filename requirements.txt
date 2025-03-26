@@ -1,0 +1,9 @@
+streamlit
+python-dotenv
+langgraph
+typing_extensions
+langchain_openai
+langchain_community
+pinecone==3.2.2
+langchain
+langchain_core
